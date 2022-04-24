@@ -1,0 +1,68 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+}
+
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 30px;
+    background: linear-gradient(90deg, transparent, transparent) left bottom/100% no-repeat,
+        linear-gradient(90deg, #ffffff80, #ffffff80) center bottom/calc(100% - 20px) 2px no-repeat;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.inputBox:focus {
+    background: linear-gradient(90deg, transparent, transparent) left bottom/100% no-repeat,
+        linear-gradient(90deg, #fff, #fff) center bottom/100% 2px no-repeat;
+    padding-bottom: 25px;
+}
+
+.inputBox::placeholder {
+    color: #ffffff80;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.inputBox:focus::placeholder {
+    color: #ffffffb7;
+    font-size: 22px;
+}
+
+.submitBtn {
+    margin-top: 20px;
+    background-color: #e9583f;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 7px 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.buttonOff {
+    opacity: 0.5;
+    cursor: default;
+}
