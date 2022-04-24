@@ -4,6 +4,10 @@ import styles from './App.module.css';
 import Cards from './Components/Cards';
 
 
+// const array = ["1", "2", "3", "4", "5", "6", "7"];
+// console.log(array.splice(1, 1));
+// console.log(array);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -30,10 +34,23 @@ class App extends Component {
         }
         return response.json();
       })
-      .then(json => this.setState(prevState => ({
-        weatherData: [...prevState.weatherData, json],
-        responseHasError: false,
-      })))
+      .then(json => this.setState(prevState => {
+        const hasElem = prevState.weatherData.findIndex(data => data.id === json.id);
+        if (hasElem === -1) {
+          return {
+            weatherData: [...prevState.weatherData, json],
+            responseHasError: false,
+          }
+        } else {
+          const newWeatherState = prevState.weatherData;
+          newWeatherState.splice(hasElem, 1);
+          newWeatherState.unshift(json);
+          return {
+            weatherData: newWeatherState,
+            responseHasError: false,
+          }
+        }
+      }))
       .catch(() => {
         this.setState({ responseHasError: true });
       })
