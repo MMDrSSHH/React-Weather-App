@@ -52,7 +52,11 @@ const Card = ({ data, removeHandler }) => {
                 </sup>
             </span>
             <img src={`https://openweathermap.org/img/w/${icon}.png`} alt={description} className={styles.image} />
-            <p className={styles.des}>{description}</p>
+            <p className={styles.desContainer}>
+                <span className={styles.des}>
+                    {description}
+                </span>
+            </p>
         </div>
     )
 }
